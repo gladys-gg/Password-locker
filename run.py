@@ -90,10 +90,32 @@ def main():
                 password = input()
 
             else:
-                print("Welcome {user_name} to your account")
+                print("Welcome {username} to your account")
                 print('\n')
 
-                
+        elif short_code == 'lg':
+            print("Welcome")
+            print("Kindly input your username: ")
+            user_name = input()
+    
+            print("Enter your password: ")
+            password = input()
+            print('\n')
+
+            print("Login successful")
+            print('\n')
+            print('\n')
+
+        elif short_code == 'ex':
+            break
+        else:
+            print("Enter valid code to continue")
+
+if __name__ == '__main__':
+    main()
+
+
+
 
 
 
