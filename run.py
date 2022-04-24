@@ -21,3 +21,80 @@ def display_users():
 def create_account(account_username, account_name, account_password):
     newaccount = Credentials(account_username, account_name, account_password)
     return newaccount
+
+
+
+def save_account(user):
+    user.save_account()
+
+def delete_account(user):
+    user.delete_account()
+
+def find_account(number):
+    return Credentials.find_by_number(number)
+
+def display_accounts():
+    return Credentials.display_accounts()
+
+def main():
+    while True:
+        print("Welcome to password locker")
+        print('\n')
+        print("SElect a short code to navigate through: To create a new user use 'cu': To login use 'lg' or 'ex to exit")
+        short_code = input().lower()
+        print('\n')
+
+        if short_code == 'cu':
+            print("Create Account")
+            print("-"*10)
+
+            print ("First name ....")
+            first_name = input()
+
+            print("Last name ...")
+            last_name = input()
+
+            print("Create your username")
+            user_name = input()
+
+            print("Create password")
+            password = input()
+
+            print("confirm password")
+            confirm_password = input()
+
+            while confirm_password != password:
+                print("Password did not match")
+                print("Enter the password")
+                password = input()
+                print("Confirm the password")
+                confirm_password = input()
+
+            else:
+                
+                save_user(create_user(first_name,last_name,user_name,password)) # create and save new contact.
+                print ('\n')
+                print(f"Congratulations New User {first_name} {last_name} created successfully")
+                print ('\n')
+                print("Proceed to login")
+                print("Enter your username: ")
+                user_name = input()
+                print("Enter your password: ")
+                password = input()
+
+            while user_name != user_name:
+                print("Invalid Username or Password!!")
+                print("Username: ")
+                user_name = input()
+                print("Enter the password")
+                password = input()
+
+            else:
+                print("Welcome {user_name} to your account")
+                print('\n')
+
+                
+
+
+
+
