@@ -32,6 +32,11 @@ def create_account(account_username, account_name, account_password):
 def save_account(user):
     Credentials.save_account()
 
+def password_generator():
+    gen_pass = Credentials.password_generator()
+    return gen_pass
+
+
 def delete_account(user):
     Credentials.delete_account()
 

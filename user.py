@@ -85,9 +85,9 @@ class Credentials:
         """
         Credentials.accounts.remove(self)
 
-    characters = string.ascii_letters + string.punctuation  + string.digits
-    password =  "".join(random.choice(CharacterData) for x in range(random.randint(8, 16)))
-    print('password')
+    def password_generator(characters = string.ascii_letters + string.punctuation  + string.digits):
+        gen_pass =  "".join(random.choice(CharacterData) for x in range(random.randint(8, 16)))
+        return gen_pass
 
 
     @classmethod
