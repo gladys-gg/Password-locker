@@ -12,3 +12,22 @@ As a user I would like:
 * Store my existing login credentials
 * Generate a password for a new credential/account
 * Copy my credentials to the clipboard
+
+# SetUp / Installation Requirements
+# Prerequisites
+* python3.6
+* pip
+* pyperclip
+* xclip
+
+
+# Cloning
+In your terminal:
+    $ git clone https://github.com/gladys-gg/Password-locker.git
+    $ cd Password-locker
+
+# Running the Application
+* To run the application, in your terminal:
+
+  * $ chmod +x Password_locker.py
+  * $ ./Password_locker.py 
