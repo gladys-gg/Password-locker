@@ -12,11 +12,15 @@ def save_user(user):
 def delete_user(user):
     user.delete_user()
 
-def find_user(number):
-    return User.find_by_number(number)
+def find_user(username):
+    return User.find_by_number(username)
 
 def display_users():
     return User.display_users()
+
+def login_user(username,password):
+    exist_user = User.user_exist(username,password)
+    return exist_user
 
 
 def create_account(account_username, account_name, account_password):
@@ -26,13 +30,13 @@ def create_account(account_username, account_name, account_password):
 
 
 def save_account(user):
-    user.save_account()
+    Credentials.save_account()
 
 def delete_account(user):
-    user.delete_account()
+    Credentials.delete_account()
 
-def find_account(number):
-    return Credentials.find_by_number(number)
+def find_account(account_name):
+    return Credentials.find_by_number(account_name)
 
 def display_accounts():
     return Credentials.display_accounts()
@@ -41,7 +45,7 @@ def main():
     while True:
         print("Welcome to password locker")
         print('\n')
-        print("SElect a short code to navigate through: To create a new user use 'cu': To login use 'lg' or 'ex to exit")
+        print("Select a short code to navigate through: To create a new user use 'cu': To login use 'lg' or 'ex to exit")
         short_code = input().lower()
         print('\n')
 

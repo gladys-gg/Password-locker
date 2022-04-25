@@ -1,3 +1,7 @@
+import string
+import random
+from xml.dom.minidom import CharacterData
+from xml.dom.pulldom import CHARACTERS
 import pyperclip
 from re import T
 from requests import delete
@@ -36,12 +40,12 @@ class User:
             return cls.user_list
 
     @classmethod
-    def find_by_number(cls,number):
+    def find_by_name(cls,username):
             """
             Method that takes in a username and returns a user that matches that number
             """
             for user in cls.user_list:
-                if user.user_name == number:
+                if user.user_name == username:
                     return user
 
     @classmethod
@@ -80,6 +84,11 @@ class Credentials:
         delete a saved credential from ana account
         """
         Credentials.accounts.remove(self)
+
+    characters = string.ascii_letters + string.punctuation  + string.digits
+    password =  "".join(random.choice(CharacterData) for x in range(random.randint(8, 16)))
+    print('password')
+
 
     @classmethod
     def display_accounts(cls):
