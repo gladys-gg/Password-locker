@@ -1,4 +1,4 @@
-
+import pyperclip
 from re import T
 from requests import delete
 
@@ -49,7 +49,7 @@ class User:
             for user in cls.user_list:
                 if user.user_name == number:
                     return True
-                    return False
+                return False
 
 
 class Credentials:
@@ -89,12 +89,27 @@ class Credentials:
             return cls.accounts
 
     @classmethod
-    def find_by_number(cls,number):
+    def find_by_name(cls,account_username):
             """
             Method that takes in a username and returns a user that matches that number
             """
             for account in cls.accounts:
-                if account.account_username == number:
+                if account.account_username == account_username:
                     return account
+
+    @classmethod
+    def copy_account(cls,account):
+        """
+        a method that copies credentials info
+        """	
+        find_credential = Credentials.find_by_name(account)
+        pyperclip.copy(find_credential.password)
+
+    @classmethod
+    def account_exist(cls, account_name):
+        for account in cls.accounts:
+            if account.account_name == account_name:
+                return account_name
+   
 
 
