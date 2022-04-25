@@ -23,24 +23,24 @@ As a user I would like:
 
 #### Cloning
 In your terminal:
-    $ git clone https://github.com/gladys-gg/Password-locker.git
-    $ cd Password-locker
+* $ git clone https://github.com/gladys-gg/* Password-locker.git
+* $ cd Password-locker
 
 ### Running the Application
 * To run the application, in your terminal:
 
-  * $ chmod +x Password_locker.py
-  * $ ./Password_locker.py 
+* $ chmod +x Password_locker.py
+* $ ./Password_locker.py 
 
 
 ### Testing the Application
 * To run the tests for the class file:
-    $ python3.9 user_test.py
+* $ python3.9 user_test.py
 
 
-# Technologies Used
+### Technologies Used
 * Python3.9
 
 
-# License
+### License
 MIT ©2022 Gladys Mwangi
