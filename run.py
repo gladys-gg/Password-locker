@@ -18,7 +18,7 @@ def find_user(username):
 def display_users():
     return User.display_users()
 
-def login_user(user_name,password):
+def user_exist(user_name,password):
     exist_user = User.user_exist(user_name,password)
     return exist_user
 
@@ -112,7 +112,7 @@ def main():
             print("Enter your password: ")
             password = str(input("Enter your password:-"))
             print('\n')
-            user_exists = login_user(user_name,password)
+            user_exists = user_exist(user_name,password)
             if user_exists == user_name:
                 print(f"Welcome {user_name}. Please choose an option to continue.")
                 print("*"*30)
