@@ -1,9 +1,9 @@
 # Password-locker
 
-# Description
+## Description
  Password Locker is a terminal run python application that allows users to store details i.e. usernames and passwords of their various accounts.
 
-# User Stories
+### User Stories
 These are the behaviours/features that the application implements for use by a user.
 
 As a user I would like:
@@ -13,27 +13,27 @@ As a user I would like:
 * Generate a password for a new credential/account
 * Copy my credentials to the clipboard
 
-# SetUp / Installation Requirements
-# Prerequisites
+### SetUp / Installation Requirements
+#### Prerequisites
 * python3.6
 * pip
 * pyperclip
 * xclip
 
 
-# Cloning
+#### Cloning
 In your terminal:
     $ git clone https://github.com/gladys-gg/Password-locker.git
     $ cd Password-locker
 
-# Running the Application
+### Running the Application
 * To run the application, in your terminal:
 
   * $ chmod +x Password_locker.py
   * $ ./Password_locker.py 
 
 
-# Testing the Application
+### Testing the Application
 * To run the tests for the class file:
     $ python3.9 user_test.py
 
