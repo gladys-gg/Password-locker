@@ -33,3 +33,14 @@ In your terminal:
   * $ ./Password_locker.py 
 
 
+# Testing the Application
+* To run the tests for the class file:
+    $ python3.9 user_test.py
+
+
+# Technologies Used
+* Python3.9
+
+
+# License
+MIT ©2022 Gladys Mwangi
