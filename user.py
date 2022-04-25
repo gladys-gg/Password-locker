@@ -49,9 +49,9 @@ class User:
                     return user
 
     @classmethod
-    def user_exist(cls,number):
+    def user_exist(cls,user_name):
             for user in cls.user_list:
-                if user.user_name == number:
+                if user.user_name == user_name:
                     return True
                 return False
 
@@ -107,11 +107,11 @@ class Credentials:
                     return account
 
     @classmethod
-    def copy_account(cls,account):
+    def copy_account(cls,account_name):
         """
         a method that copies credentials info
         """	
-        find_credential = Credentials.find_by_name(account)
+        find_credential = Credentials.find_by_name(account_name)
         pyperclip.copy(find_credential.password)
 
     @classmethod

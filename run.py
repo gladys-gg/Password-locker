@@ -18,8 +18,8 @@ def find_user(username):
 def display_users():
     return User.display_users()
 
-def login_user(username,password):
-    exist_user = User.user_exist(username,password)
+def login_user(user_name,password):
+    exist_user = User.user_exist(user_name,password)
     return exist_user
 
 
@@ -45,6 +45,9 @@ def find_account(account_name):
 
 def display_accounts():
     return Credentials.display_accounts()
+
+def copy_account():
+    return Credentials.copy_account()
 
 def main():
     while True:
@@ -102,22 +105,79 @@ def main():
 
 
         elif short_code == 'lg':
-            print("Welcome")
+            print("Welcome. To login enter your account details:-")
             print("Kindly input your username: ")
             user_name = input()
     
             print("Enter your password: ")
-            password = input()
+            password = str(input("Enter your password:-"))
             print('\n')
+            user_exists = login_user(user_name,password)
+            if user_exists == user_name:
+                print(f"Welcome {user_name}. Please choose an option to continue.")
+                print("*"*30)
+                while True:
+                    print("*"*30)
+                    print('\n')
+                    print("Navigation codes: \n cc-Create a credential \n dc-Display Credentials \n cp-Copy Password \n ex-Exit:")
+                    short_code = input('Enter a choice: ').lower().strip()
+                    if short_code =='ex':
+                        print(f"goodbye {user_name}")
+                        break
+                    elif short_code == 'cc':
+                        print("*"*60)
+                        print('Enter your account details:-')
+                        account_name = input("Enter the account name:-")
+                        account_username = input("Enter your account\'s username:-")
+                        while True:
+                            print("+"*30)
+                            print("Please choose an option of the password. \n ep-enter existing password \n pg-password generate \n ex-exit")
+                            password_choice = input("Enter an option to continue:-").lower()
+                            if password_choice =='ep':
+                                print('\n')
+                                account_password = input("Enter your password:")
+                                break
+                            elif password_choice =='pg':
+                                account_password = password_generator()
+                                break
+                            elif password_choice =='ex':
+                                print("You are exiting")
+                                break
+                            else:
+                                print("Wrong option entered. Try again.")
 
-            print("Login successful")
-            print('\n')
-            print('\n')
+                        save_account(create_account(account_username, account_name, account_password))
+                        print('\n')
+                        print(f"Account created: ACcount Name: {account_name} Account Username: {account_username} Password: {account_password}")
+                    
+                    elif short_code == 'dc':
+                        print("Hi there:")
+                        if display_accounts(user_name):
+                            print("here is a list of all your accounts")
+                            print("+"*40)
+                            for credentials in display_accounts(user_name):
+                                print(f"Account Name : {account_name} Account Username : {account_username} Account Password : {account_password}") 
+                                print("-"*30)
+                        else:
+                            print("-"*30)
+                            print("No user found. No credentials saved")
+                            print("*"*30)
+                    elif short_code =='cp':
+                        print('\n')
+                        choose_account = input("Enter the account name to copy:-")
+                        copy_account(choose_account)
+                        print('\n')
 
-        elif short_code == 'ex':
-            break
+                    else:
+                        print("Wrong option. Choose again.")
+            else:
+                print('\n')
+                print("Wrong details entered. Choose again or create an account")
+
         else:
-            print("Enter valid code to continue")
+            print("*"*50)
+            print("Wrong option . Choose again")
+
 
 if __name__ == '__main__':
     main()
