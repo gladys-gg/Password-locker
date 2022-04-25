@@ -1,3 +1,4 @@
+
 from user import Credentials, User
 
 
@@ -88,10 +89,8 @@ def main():
                 user_name = input()
                 print("Enter the password")
                 password = input()
+                print("Logged in successfully")
 
-            else:
-                print("Welcome {username} to your account")
-                print('\n')
 
         elif short_code == 'lg':
             print("Welcome")

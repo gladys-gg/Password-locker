@@ -1,5 +1,5 @@
-from re import T
 
+from re import T
 from requests import delete
 
 class User:
@@ -25,6 +25,8 @@ class User:
             deletes a saved user from the list
             """
             User.user_list.remove(self)
+
+    
 
     @classmethod
     def display_users(cls):
