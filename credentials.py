@@ -16,6 +16,17 @@ class Credentials:
         self.account = account
         self.account_username = account_username
         self.account_password = account_password
+        
+    @classmethod
+    def verify_user(cls,username, password):
+        """
+        method to verify whether the user is in our users or not
+        """
+        a_user = ""
+        for user in User.users:
+            if(user.username == username and user.password == password):
+                    a_user == user.username
+        return 
     
     def save_credential(self):
 

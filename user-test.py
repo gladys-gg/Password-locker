@@ -12,7 +12,7 @@ def setUp(self):
     """
     set up method to run before each test cases
     """
-    self.newuser = User('Gladys', 'Mwangi','gmwangi','g2022')
+    self.newuser = User('gmwangi','g2022')
 
 def test_init(self):
     """
@@ -36,7 +36,7 @@ def test_delete_user(self):
     """
 
     self.newuser.save_user()
-    test_user = User('Test','user','tuser','2019')
+    test_user = User('tuser','2019')
     test_user.save_user()
 
     self.newuser.delete_user()
