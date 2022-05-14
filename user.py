@@ -12,10 +12,10 @@ class User:
     '''
     user_list = [] #an array to store a collection of users
 
-    def __init__(self, first_name,last_name,user_name,password):
+    def __init__(self, first_name,last_name,username,password):
         self.first_name = first_name
         self.last_name = last_name
-        self.user_name = user_name
+        self.username = username
         self.password = password
         
     def save_user(self):
@@ -33,7 +33,7 @@ class User:
     
 
     @classmethod
-    def display_users(cls):
+    def display_user(cls):
             """
             return information from the users list
             """
@@ -45,13 +45,13 @@ class User:
             Method that takes in a username and returns a user that matches that number
             """
             for user in cls.user_list:
-                if user.user_name == username:
+                if user.username == username:
                     return user
 
     @classmethod
-    def user_exist(cls,user_name):
+    def user_exist(cls,username):
             for user in cls.user_list:
-                if user.user_name == user_name:
+                if user.username == username:
                     return True
                 return False
 
@@ -62,6 +62,18 @@ class Credentials:
     """
                     
     accounts = []  #list of accounts a user may have
+    
+    
+    @classmethod
+    def verify_user(cls,username,password):
+        '''
+        method to verify if the user exists
+        '''
+        is_user = ""
+        for user in User.user_list:
+            if(user.username ==username and user.password == password):
+                is_user == user.username
+            return is_user
 
     def __init__(self, account_username,account_name,account_password):
         """
@@ -108,6 +120,7 @@ class Credentials:
 
     @classmethod
     def copy_account(cls,account_name):
+        
         """
         a method that copies credentials info
         """	
@@ -118,7 +131,10 @@ class Credentials:
     def account_exist(cls, account_name):
         for account in cls.accounts:
             if account.account_name == account_name:
-                return account_name
-   
+                return True
+            return False
+        
+            
+
 
 
