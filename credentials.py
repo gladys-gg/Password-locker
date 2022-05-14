@@ -1,4 +1,5 @@
 import pyperclip
+from user import User
 
 class Credentials:
     """
@@ -23,7 +24,7 @@ class Credentials:
         method to verify whether the user is in our users or not
         """
         a_user = ""
-        for user in User.users:
+        for user in User.user_list:
             if(user.username == username and user.password == password):
                     a_user == user.username
         return 
